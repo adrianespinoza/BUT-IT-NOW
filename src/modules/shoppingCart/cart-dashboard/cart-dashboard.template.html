@@ -60,6 +60,10 @@
               <td><span>{{item.price * item.quantity | currency}}</span></td>
               <td><button ng-click="remove($index)">Remove</button></td>
             </tr>
+            <tr>
+              <td colspan="3"><span>CART TOTAL</span></td>
+              <td colspan="2"><span>{{cartTotal | currency}}</span></td>
+            </tr>
           </tbody>
         </table>
 

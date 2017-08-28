@@ -2,10 +2,12 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
   '$scope',
   'shoppingCartList',
   'offeredProductsList',
+  'cartService',
   function (
       $scope,
       shoppingCartList,
-      offeredProductsList
+      offeredProductsList,
+      cartService
   ) {
     'use strict';
 
@@ -21,6 +23,10 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
       if (!found) {
         items.push(item);
       }
+    };
+
+    var cartTotalCalculation = function () {
+      $scope.cartTotal = cartService.cartTotalCalculation($scope.items);
     };
 
     $scope.remove = function (index) {
@@ -43,6 +49,7 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
       $scope.items = shoppingCartList;
       $scope.offeredProductSelected = undefined;
       $scope.offeredProducts = offeredProductsList;
+      cartTotalCalculation();
     };
     init();
   }

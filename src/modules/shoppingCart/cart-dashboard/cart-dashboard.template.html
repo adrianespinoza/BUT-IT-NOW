@@ -42,13 +42,31 @@
       </div>
       <div class="row">
         <h1>YOUR SHOPPING CART</h1>
-        <div ng-repeat='item in items'>
-          <span>{{item.title}}</span>
-          <input ng-model='item.quantity'>
-          <span>{{item.price | currency}}</span>
-          <span>{{item.price * item.quantity | currency}}</span>
-          <button ng-click="remove($index)">Remove</button>
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in items">
+              <td><span>{{item.title}}</span></td>
+              <td><input ng-model='item.quantity'></td>
+              <td><span>{{item.price | currency}}</span></td>
+              <td><span>{{item.price * item.quantity | currency}}</span></td>
+              <td><button ng-click="remove($index)">Remove</button></td>
+            </tr>
+            <tr>
+              <td colspan="3"><span>CART TOTAL</span></td>
+              <td colspan="2"><span>{{cartTotal | currency}}</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <button ng-click="submitOrder()" ng-disabled="false">Submit</button>
       </div>
     </div>
   </div>

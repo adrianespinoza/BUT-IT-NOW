@@ -2,10 +2,14 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
   '$scope',
   'shoppingCartList',
   'offeredProductsList',
+  'cartService',
+  'cacheManager',
   function (
       $scope,
       shoppingCartList,
-      offeredProductsList
+      offeredProductsList,
+      cartService,
+      cacheManager
   ) {
     'use strict';
 
@@ -21,6 +25,10 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
       if (!found) {
         items.push(item);
       }
+    };
+
+    var cartTotalCalculation = function () {
+      $scope.cartTotal = cartService.cartTotalCalculation($scope.items);
     };
 
     $scope.remove = function (index) {
@@ -39,10 +47,15 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
       }
     };
 
+    $scope.submitOrder = function () {
+      cacheManager.put('submitted-items', $scope.items);
+    };
+
     var init = function () {
       $scope.items = shoppingCartList;
       $scope.offeredProductSelected = undefined;
       $scope.offeredProducts = offeredProductsList;
+      cartTotalCalculation();
     };
     init();
   }

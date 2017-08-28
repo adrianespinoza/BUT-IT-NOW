@@ -3,11 +3,13 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
   'shoppingCartList',
   'offeredProductsList',
   'cartService',
+  'cacheManager',
   function (
       $scope,
       shoppingCartList,
       offeredProductsList,
-      cartService
+      cartService,
+      cacheManager
   ) {
     'use strict';
 
@@ -43,6 +45,10 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
         addProductToItemsList(item, $scope.items);
         $scope.offeredProductSelected = undefined;
       }
+    };
+
+    $scope.submitOrder = function () {
+      cacheManager.put('submitted-items', $scope.items);
     };
 
     var init = function () {

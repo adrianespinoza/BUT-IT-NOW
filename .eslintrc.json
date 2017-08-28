@@ -1,0 +1,60 @@
+{
+  "rules": {
+    "dot-location": ["error", "property"],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "MemberExpression": 1
+      }
+    ],
+    "max-len": [
+      "error",
+      120,
+      2,
+      {"ignoreComments": true, "ignoreUrls": true}
+    ],
+    "newline-after-var": ["off"],
+    "space-before-function-paren": [
+      "error",
+      { "anonymous": "always", "named": "never" }
+    ],
+    "array-bracket-spacing": ["error", "never"],
+    "require-jsdoc": ["off"],
+    "valid-jsdoc": ["off"],
+    "linebreak-style": ["off"],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
+    "key-spacing": ["error", {
+      "multiLine": {
+          "beforeColon": false,
+          "afterColon": true
+      }
+    }],
+    "no-multi-spaces": "error",
+    "no-trailing-spaces": [
+      "error",
+      { "skipBlankLines": false }
+    ],
+    "no-whitespace-before-property": "error",
+    "semi": "error"
+  },
+  "globals": {
+    "Kinetic": true,
+    "blobStream": true,
+    "PDFDocument": true,
+    "async": true,
+    "Chart": true,
+    "Flotr": true,
+    "Canvas2Image": true,
+    "html2canvas": true,
+    "angular": true,
+    "_": true
+  },
+  "env": {
+    "browser": true,
+    "jquery": true
+  }
+}

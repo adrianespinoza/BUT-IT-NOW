@@ -1,0 +1,31 @@
+# Ignore files for Client Side
+
+# use glob syntax
+syntax: glob
+
+Gemfile.lock
+.sass-cache/
+npm-debug.log
+karma.conf.js
+node_modules/
+src/bower-components/
+src/index.less
+dist/index.html
+dist/unsupported.html
+dist/rev-manifest.json
+dist/js/helper*.js
+dist/js/vendor*.js
+dist/pdfjs-build/
+**.temp/
+out/
+coverage/
+
+*.tmp
+*.scssc
+*.orig
+*.idea
+*.vscode
+*.rej
+*.lock
+*.back
+

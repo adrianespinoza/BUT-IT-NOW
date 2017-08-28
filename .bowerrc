@@ -1,0 +1,4 @@
+{
+  "directory": "src/bower-components",
+  "resolvers" : [ "bower-nexus3-resolver" ]
+}

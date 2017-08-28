@@ -37,7 +37,7 @@
           </label>
           <span id="price">{{offeredProductSelected.price | currency}}</span>
           <br/><br/>
-          <button ng-click="addProduct(cartForm)" ng-disabled="offeredProductSelected === undefined">Add</button>
+          <button ng-click="addProduct(cartForm)" ng-disabled="offeredProductSelected === undefined" class="ux-greeny">Add</button>
         </form>
       </div>
       <div class="row">
@@ -58,7 +58,7 @@
               <td><input ng-model='item.quantity'></td>
               <td><span>{{item.price | currency}}</span></td>
               <td><span>{{item.price * item.quantity | currency}}</span></td>
-              <td><button ng-click="remove($index)">Remove</button></td>
+              <td><button ng-click="remove($index)" class="ux-greeny">Remove</button></td>
             </tr>
             <tr>
               <td colspan="3"><span>CART TOTAL</span></td>
@@ -66,7 +66,10 @@
             </tr>
           </tbody>
         </table>
-        <button ng-click="submitOrder()" ng-disabled="false">Submit</button>
+        <button ng-click="submitOrder()" ng-disabled="false" class="ux-greeny">Submit</button>
+      </div>
+      <div class="row">
+        <submitted-orders items="submittedOrders"></submitted-orders>
       </div>
     </div>
   </div>

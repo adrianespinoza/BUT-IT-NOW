@@ -1,0 +1,17 @@
+<h1>YOUR PURCHASES</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Date of submission</th>
+    <th>Total of purchase</th>
+    <th>Brief summary</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="item in items">
+    <td><span>{{item.dateOfSubmission}}</span></td>
+    <td><span>{{item.totalOfPurchases}}</span></td>
+    <td><span>{{item.briefSummary}}</span></td>
+  </tr>
+  </tbody>
+</table>

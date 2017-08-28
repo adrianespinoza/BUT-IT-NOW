@@ -48,7 +48,12 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
     };
 
     $scope.submitOrder = function () {
-      cacheManager.put('submitted-items', $scope.items);
+      $scope.submittedOrders.push({
+        dateOfSubmission: (new Date()).toDateString(),
+        totalOfPurchases: $scope.items.length,
+        briefSummary: 'Some description here'
+      });
+      cacheManager.put('submitted-items', $scope.submittedOrders);
     };
 
     var init = function () {
@@ -56,6 +61,8 @@ angular.module('shoppingCartApp.cartDashboard').controller('shoppingCart.CartDas
       $scope.offeredProductSelected = undefined;
       $scope.offeredProducts = offeredProductsList;
       cartTotalCalculation();
+      $scope.submittedOrders = cacheManager.get('submitted-items') || [];
+
     };
     init();
   }

@@ -2,13 +2,53 @@
   <!--main-app-content content-box-->
   <div class="small-12 small-centered columns">
     <div class="row content">
-      <h1>Your Shopping Cart</h1>
-      <div ng-repeat='item in items'>
-        <span>{{item.title}}</span>
-        <input ng-model='item.quantity'>
-        <span>{{item.price | currency}}</span>
-        <span>{{item.price * item.quantity | currency}}</span>
-        <button ng-click="remove($index)">Remove</button>
+      <div class="row">
+        <h1>ADD PRODUCTS</h1>
+        <form name="cartForm">
+          <label for="offeredProducts">
+            Offered Products:
+          </label>
+          <select id="offeredProducts"
+                  name="offeredProducts"
+                  data-ng-model="offeredProductSelected"
+                  ng-options="(offeredProduct.title | inflector:'humanize') for offeredProduct in offeredProducts"
+                  ng-change="onChangeOfferedProduct()"
+                  required="true">
+          </select>
+          <span class="error" ng-show="cartForm.offeredProducts.$error.required">Required!</span>
+          <br/><br/>
+          <label for="quantity">
+            Quantity:
+          </label>
+          <input id="quantity"
+                 type="number"
+                 name="quantity"
+                 ng-disabled="offeredProductSelected === undefined"
+                 ng-model="offeredProductSelected.quantity"
+                 ng-min="1"
+                 ng-max="100"
+                 ng-minlength="1"
+                 ng-maxlength="10"
+                 required="true">
+          <span class="error" ng-show="cartForm.quantity.$error.required">Required!</span>
+          <br/><br/>
+          <label for="price">
+            Price:
+          </label>
+          <span id="price">{{offeredProductSelected.price | currency}}</span>
+          <br/><br/>
+          <button ng-click="addProduct(cartForm)" ng-disabled="offeredProductSelected === undefined">Add</button>
+        </form>
+      </div>
+      <div class="row">
+        <h1>YOUR SHOPPING CART</h1>
+        <div ng-repeat='item in items'>
+          <span>{{item.title}}</span>
+          <input ng-model='item.quantity'>
+          <span>{{item.price | currency}}</span>
+          <span>{{item.price * item.quantity | currency}}</span>
+          <button ng-click="remove($index)">Remove</button>
+        </div>
       </div>
     </div>
   </div>

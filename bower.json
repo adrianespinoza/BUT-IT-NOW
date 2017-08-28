@@ -1,0 +1,66 @@
+{
+  "name": "shoppingCart",
+  "version": "1.0.0",
+  "main": [
+    "./dist/js/scripts.js",
+    "./dist/styles/app.css"
+  ],
+  "dependencies": {
+    "jquery": "2.1.0",
+    "angular": "1.4.7",
+    "angular-animate": "1.4.7",
+    "angular-filter": "0.5.8",
+    "angular-foundation": "0.6.0",
+    "angular-growl-v2": "0.7.9",
+    "angular-local-storage": "0.0.3",
+    "angular-momentjs": "0.2.2",
+    "angular-resource": "1.4.7",
+    "angular-route": "1.4.7",
+    "angular-sanitize": "1.4.7",
+    "angular-scroll": "0.7.3",
+    "angular-spinner": "0.6.2",
+    "angular-ui": "0.4.0",
+    "angular-ui-router": "0.2.17",
+    "angular-ui-select": "0.12.0",
+    "angular-ui-select2": "0.0.5",
+    "angular-ui-tree": "2.0.10",
+    "angular-ui-utils": "0.1.1",
+    "angularjs-camelCase-human": "1.0.1",
+    "async": "1.4.2",
+    "checklist-model": "0.5.0",
+    "ionicons": "2.0.1",
+    "jquery-ui": "1.11.4",
+    "jspdf": "1.0.272",
+    "kineticjs": "5.1.0",
+    "lodash": "4.1.0",
+    "ng-table": "0.3.3",
+    "ng-tags-input": "2.3.0",
+    "pdfjs-build": "0.8.1",
+    "select2": "3.4.5",
+    "signalr": "2.2.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.4.7"
+  },
+  "resolutions": {
+    "angular": "1.4.4"
+  },
+  "ignore": [
+    ".tmp",
+    "documents",
+    "gulp-tasks",
+    "src",
+    "test",
+    ".bowerrc",
+    ".gitignore",
+    "bower.json",
+    "Gemfile",
+    "gulpfile.js",
+    "karma.conf.js",
+    "package.json",
+    "./dist/js/helper.js",
+    "./dist/js/vendor.js",
+    "./dist/pdfjs-build",
+    "./dist/index.html"
+  ]
+}

@@ -20,6 +20,18 @@ angular.module('shoppingCartApp.cartDashboard', [
 
                 return items;
               }
+            ],
+            offeredProductsList: [
+              function () {
+                var items = [
+                  {title: 'TV', price: 500},
+                  {title: 'Radio', price: 80},
+                  {title: 'Microwave', price: 150},
+                  {title: 'ChromeCast', price: 70}
+                ];
+
+                return items;
+              }
             ]
           }
         }
